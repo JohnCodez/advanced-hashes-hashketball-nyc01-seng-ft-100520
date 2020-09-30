@@ -170,9 +170,9 @@ def player_numbers(name)
   numbers = []
   all = game_hash
   all.each do |homeaway, info|
-    if info[:team_name] = name
-      homeaway[:players].each do |stats|
-        numbers << :number
+    if info.has_value?(name)
+      info[:players].each do |stats|
+        numbers << stats[:number]
       end
     end
   end
