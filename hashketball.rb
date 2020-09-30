@@ -130,7 +130,6 @@ end
 
 def num_points_scored(name)
   all = game_hash
-  points = nil
   all.each do |homeaway, info|
     info.each do |statnames, stats|
       if stats == name
