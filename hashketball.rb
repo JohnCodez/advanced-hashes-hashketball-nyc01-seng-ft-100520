@@ -131,9 +131,9 @@ end
 def num_points_scored(name)
   all = game_hash
   all.each do |homeaway, info|
-    info.each do |statnames, stats|
-      if stats == name
-        points = all[homeaway,info,]
+    info[:players].each do |stats|
+      if has_value?(name)
+        return stats[:points]
       end
     end
   end
