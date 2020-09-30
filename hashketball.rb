@@ -128,7 +128,17 @@ end
 
 # Write code here
 
-
+def num_points_scored(name)
+  all = game_hash
+  all.each do |homeaway, info|
+    info[players].each do |stats|
+      if :player_name == name
+        
+      end
+    end
+  end
+  
+end
 
 
 
