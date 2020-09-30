@@ -134,7 +134,7 @@ def num_points_scored(name)
   all.each do |homeaway, info|
     info.each do |statnames, stats|
       if stats == name
-        points = :points
+        points = all[homeaway,info,]
       end
     end
   end
