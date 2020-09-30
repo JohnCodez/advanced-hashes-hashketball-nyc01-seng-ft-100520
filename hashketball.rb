@@ -166,11 +166,44 @@ def team_names
   [game_hash[:home][:team_name],game_hash[:away][:team_name] ]
 end
 
+def player_numbers(name)
+  all = game_hash
+  all.each do |homeaway, info|
+    info[:players].each do |stats|
+      if stats.has_value?(name)
+        return stats[:number]
+      end
+    end
+  end
+  
+end
 
+def player_stats(name)
+  all = game_hash
+  all.each do |homeaway, info|
+    info[:players].each do |stats|
+      if stats.has_value?(name)
+        return stats
+      end
+    end
+  end
+  
+end
 
-
-
-
+def big_shoe_rebounds
+  biggest = 0
+  rebounds = nil
+  all = game_hash
+  all.each do |homeaway, info|
+    info[:players].each do |stats|
+      if stats[:shoe] > biggest
+        biggest = stats[:shoe]
+        rebounds = stats[:rebounds]
+      end
+    end
+  end
+  
+end
 
 
 
